@@ -1,4 +1,5 @@
 return {
+  -- Snippet
   {
     "L3MON4D3/LuaSnip",
     build = (not jit.os:find("Windows"))
@@ -151,6 +152,7 @@ return {
       }
     end,
   },
+  -- comment
   { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
   {
     "echasnovski/mini.comment",
@@ -166,6 +168,7 @@ return {
       require("mini.comment").setup(opts)
     end,
   },
+  -- auto pairs
   {
     "echasnovski/mini.pairs",
     event = "VeryLazy",

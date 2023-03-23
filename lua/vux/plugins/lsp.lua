@@ -37,20 +37,16 @@ return {
           -- Enable completion triggered by <c-x><c-o>
           -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-          -- Global mappings.
-          -- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-          -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-          -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-          -- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
-
           local Util = require("vux.util")
           local buffer = ev.buf
           local client = vim.lsp.get_client_by_id(ev.data.client_id)
           local keymaps = {
             -- { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
             -- { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
-            { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition", has = "definition" },
-            { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+            -- { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition", has = "definition" },
+            { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
+            -- { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+            { "gr", vim.lsp.buf.references, desc = "References" },
             { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
             { "gI", "<cmd>Telescope lsp_implementations<cr>", desc = "Goto Implementation" },
             { "gt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Goto Type Definition" },
@@ -59,10 +55,10 @@ return {
             { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
             { "]d", Util.diagnostic_goto(true), desc = "Next Diagnostic" },
             { "[d", Util.diagnostic_goto(false), desc = "Prev Diagnostic" },
-            { "[e", Util.diagnostic_goto(false, "ERROR"), desc = "Prev Error" },
-            { "]e", Util.diagnostic_goto(true, "ERROR"), desc = "Next Error" },
-            { "]w", Util.diagnostic_goto(true, "WARN"), desc = "Next Warning" },
-            { "[w", Util.diagnostic_goto(false, "WARN"), desc = "Prev Warning" },
+            -- { "[e", Util.diagnostic_goto(false, "ERROR"), desc = "Prev Error" },
+            -- { "]e", Util.diagnostic_goto(true, "ERROR"), desc = "Next Error" },
+            -- { "]w", Util.diagnostic_goto(true, "WARN"), desc = "Next Warning" },
+            -- { "[w", Util.diagnostic_goto(false, "WARN"), desc = "Prev Warning" },
             {
               "<leader>cf",
               function()

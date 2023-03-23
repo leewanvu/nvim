@@ -23,6 +23,13 @@ return {
       end,
       desc = "Find Files",
     },
+    -- {
+    --   "<leader><space>",
+    --   function()
+    --     require("vux.util").find_files()
+    --   end,
+    --   desc = "Find Files",
+    -- },
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
 

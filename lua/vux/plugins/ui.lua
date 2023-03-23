@@ -21,10 +21,11 @@ return {
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { "branch", "diff" },
+          lualine_b = { "branch" },
           lualine_c = {
             { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
             { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+            { "diff" },
           },
           lualine_x = {
             {
@@ -51,5 +52,25 @@ return {
         extensions = { "nvim-tree" },
       }
     end,
-  }
+  },
+
+  -- indent
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      -- char = "▏",
+      char = "│",
+      filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
+      -- show_trailing_blankline_indent = false,
+      -- show_current_context = false,
+      -- space_char_blankline = " ",
+      show_current_context = true,
+      -- show_current_context_start = true,
+      show_end_of_line = true,
+    },
+  },
+
+  -- icons
+  { "nvim-tree/nvim-web-devicons", lazy = true },
 }
