@@ -5,3 +5,4 @@ vim.g.mapleader = ' '
 require('vux.lazy')
 require('vux.options')
 require('vux.keymaps')
+require('vux.autocmds')

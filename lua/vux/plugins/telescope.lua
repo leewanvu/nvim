@@ -21,6 +21,9 @@ return {
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
 
+    -- buffers
+    { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+
     -- git
     { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Commits" },
     { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Status" },
