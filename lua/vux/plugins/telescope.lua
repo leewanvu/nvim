@@ -1,4 +1,5 @@
 local actions = require("telescope.actions")
+local Util = require("vux.util")
 
 return {
   "nvim-telescope/telescope.nvim",
@@ -16,20 +17,7 @@ return {
   },
   keys = {
     -- find
-    {
-      "<leader>ff",
-      function()
-        require("vux.util").find_files()
-      end,
-      desc = "Find Files",
-    },
-    -- {
-    --   "<leader><space>",
-    --   function()
-    --     require("vux.util").find_files()
-    --   end,
-    --   desc = "Find Files",
-    -- },
+    { "<leader>ff", Util.find_files(), desc = "Find Files" },
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
 
@@ -52,45 +40,9 @@ return {
     { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
     { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
     { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
-    -- { "<leader>sw", Util.telescope("grep_string"), desc = "Word (root dir)" },
-    -- { "<leader>sW", Util.telescope("grep_string", { cwd = false }), desc = "Word (cwd)" },
-    -- { "<leader>uC", Util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
-    -- {
-    --   "<leader>ss",
-    --   Util.telescope("lsp_document_symbols", {
-    --     symbols = {
-    --       "Class",
-    --       "Function",
-    --       "Method",
-    --       "Constructor",
-    --       "Interface",
-    --       "Module",
-    --       "Struct",
-    --       "Trait",
-    --       "Field",
-    --       "Property",
-    --     },
-    --   }),
-    --   desc = "Goto Symbol",
-    -- },
-    -- {
-    --   "<leader>sS",
-    --   Util.telescope("lsp_workspace_symbols", {
-    --     symbols = {
-    --       "Class",
-    --       "Function",
-    --       "Method",
-    --       "Constructor",
-    --       "Interface",
-    --       "Module",
-    --       "Struct",
-    --       "Trait",
-    --       "Field",
-    --       "Property",
-    --     },
-    --   }),
-    --   desc = "Goto Symbol (Workspace)",
-    -- },
+    { "<leader>sw", "<cmd>Telescope grep_string<cr>", desc = "Word" },
+    { "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Goto Symbol" },
+    { "<leader>sS", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Goto Symbol (Workspace)" },
   },
   opts = {
     defaults = {
