@@ -3,6 +3,7 @@ local Util = require("vux.util")
 
 return {
   "nvim-telescope/telescope.nvim",
+  tag = "0.1.1",
   cmd = "Telescope",
   lazy = false,
   dependencies = {
