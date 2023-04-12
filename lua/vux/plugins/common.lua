@@ -53,4 +53,10 @@ return {
       { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
     },
   },
+
+  -- quickfix
+  {
+    "kevinhwang91/nvim-bqf",
+    ft = "qf",
+  },
 }
