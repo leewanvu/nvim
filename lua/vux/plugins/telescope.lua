@@ -27,7 +27,8 @@ return {
 
     -- git
     { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Commits" },
-    { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Status" },
+    -- { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Status" },
+    { "<leader>gg", "<cmd>Telescope git_status<CR>", desc = "Status" },
 
     -- search
     { "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "Auto Commands" },

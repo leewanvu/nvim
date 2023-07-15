@@ -103,7 +103,7 @@ return {
           format = function(_, item)
             local icons = {
               Array = " ",
-              Boolean = " ",
+              Boolean = "◩ ",
               Class = " ",
               Color = " ",
               Constant = "ﲀ ",

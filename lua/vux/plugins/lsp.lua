@@ -47,6 +47,7 @@ return {
             { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
             -- { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
             { "gr", vim.lsp.buf.references, desc = "References" },
+            -- { "gr", "<cmd>TroubleToggle lsp_references", desc = "References" },
             { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
             { "gI", "<cmd>Telescope lsp_implementations<cr>", desc = "Goto Implementation" },
             { "gt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Goto Type Definition" },
@@ -129,6 +130,9 @@ return {
       mason_lspconfig.setup_handlers {
         function(server_name)
           require('lspconfig')[server_name].setup {
+            on_init = function()
+              print("LSP: ngon")
+            end,
             capabilities = capabilities,
             settings = servers[server_name],
           }
@@ -157,4 +161,11 @@ return {
       -- end
     end,
   },
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   tag = "legacy",
+  --   config = function()
+  --     require"fidget".setup{}
+  --   end
+  -- },
 }
