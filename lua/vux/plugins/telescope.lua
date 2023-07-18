@@ -1,4 +1,4 @@
-local actions = require("telescope.actions")
+-- local actions = require("telescope.actions")
 local Util = require("vux.util")
 
 return {
@@ -52,23 +52,23 @@ return {
   opts = {
     defaults = {
       prompt_prefix = "   ",
-      selection_caret = " ",
+      selection_caret = " ",
       layout_strategy = "horizontal",
       layout_config = { prompt_position = "top" },
       sorting_strategy = "ascending",
       winblend = 0,
-      mappings = {
-        i = {
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
-          ["<C-n>"] = actions.cycle_history_next,
-          ["<C-p>"] = actions.cycle_history_prev,
-        },
-        n = {
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
-        },
-      },
+      -- mappings = {
+      --   i = {
+      --     ["<C-j>"] = actions.move_selection_next,
+      --     ["<C-k>"] = actions.move_selection_previous,
+      --     ["<C-n>"] = actions.cycle_history_next,
+      --     ["<C-p>"] = actions.cycle_history_prev,
+      --   },
+      --   n = {
+      --     ["<C-j>"] = actions.move_selection_next,
+      --     ["<C-k>"] = actions.move_selection_previous,
+      --   },
+      -- },
     },
   },
 }

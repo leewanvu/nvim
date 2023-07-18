@@ -14,29 +14,29 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "vux.plugins" },
 }, {
-  ui = {
-    icons = {
-      cmd = "גּ",
-      lazy = "鈴",
-      config = "漣",
-      event = "",
-      ft = "",
-      init = "漣",
-      import = "",
-      keys = "",
-      loaded = "●",
-      not_loaded = "○",
-      plugin = "ﮣ",
-      runtime = "",
-      source = "",
-      start = "",
-      task = "",
-      list = {
-        "●",
-        "➜",
-        "★",
-        "‒",
+    ui = {
+      icons = {
+        cmd = " ",
+        config = "",
+        event = "",
+        ft = " ",
+        init = " ",
+        import = " ",
+        keys = " ",
+        lazy = "󰒲 ",
+        loaded = "●",
+        not_loaded = "○",
+        plugin = " ",
+        runtime = " ",
+        source = " ",
+        start = "",
+        task = "✔ ",
+        list = {
+          "●",
+          "➜",
+          "★",
+          "‒",
+        },
       },
     },
-  },
-})
+  })

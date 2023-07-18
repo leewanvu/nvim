@@ -50,7 +50,7 @@ return {
         "go",
         "query",
         "dockerfile",
-        "help",
+        -- "help",
         "markdown",
         "markdown_inline",
         "python",
